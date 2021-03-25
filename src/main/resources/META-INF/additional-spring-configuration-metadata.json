@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "mybatis.typeAliasesPackage=com.com.example.demo",
+      "type": "java.lang.String",
+      "description": "Description for mybatis.typeAliasesPackage=com.com.example.demo."
+  }
+] }

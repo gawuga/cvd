@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.com.example.demo.mapper.TableMapper">
+
+    <select id="existTable" parameterType="String" resultType="Integer">
+    select count(*)
+    from information_schema.TABLES
+    where table_name=#{tableName}
+  </select>
+
+    <update id="dropTable">
+    DROP TABLE IF EXISTS ${tableName}
+  </update>
+
+    <update id="createLedTable" parameterType="String">
+    CREATE TABLE ${tableName} (
+     `product_model` VARCHAR(64),
+  `test_time` DATE,
+  `result` VARCHAR(64),
+  `use_time` VARCHAR(64),
+  `model_fail` VARCHAR(64)
+    )
+  </update>
+
+    <update id="createLogoTable" parameterType="String">
+    CREATE TABLE ${tableName} (
+     `product_model` VARCHAR(64),
+  `test_time` DATE,
+  `test_result` VARCHAR(64),
+  `use_time` VARCHAR(64),
+  `ng_code` VARCHAR(64),
+  `product_id` VARCHAR(64)
+    )
+  </update>
+
+    <update id="createAoiOrSocketTable" parameterType="String">
+    CREATE TABLE ${tableName} (
+     `product_model` VARCHAR(64),
+  `test_time` DATE,
+  `test_result` VARCHAR(64),
+  `ng_code` VARCHAR(64),
+  `sn` VARCHAR(64)
+    )
+  </update>
+
+
+
+    <update id="createLabelTable" parameterType="String">
+    CREATE TABLE ${tableName} (
+     `product_model` VARCHAR(64),
+  `test_time` DATE,
+  `order_no` VARCHAR(64),
+  `sn` VARCHAR(64)
+    )
+  </update>
+
+    <update id="createCodeTable" parameterType="String">
+    CREATE TABLE ${tableName} (
+     `device_no ` VARCHAR(64),
+  `test_time` DATE,
+  `sn` VARCHAR(64)
+    )
+  </update>
+</mapper>
